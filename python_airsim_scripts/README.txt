@@ -9,12 +9,12 @@ capture the first person, read the distance, and then target the drone to move t
 Along the xyz axis we fixed the y axis(tilt up or down) in the demo to keep the drone from iterating to the ground. 
 You can uncomment line 126 and add the more instruction based logic you wish the drone to follow after reaching the waypoint.
 
-follow_poiny_airsim
-airsim_toROS.py - The module code that converts the AirSim API to ROS interpretable commands. 
+
+airsim_toROS.py - The module code that converts the AirSim API to ROS interpretable commands. (put this in a node directory, build the node, then run)
 **TO_DO** - Create a ROS node in the follow_person_airsim.py that interprets the ROS code to incorporate communication between other flight modules needed for real world flight(can simulate the flight modules as well)
 
 
-follow_path_airsim.py - Experimental code for 
+follow_path_airsim.py - Experimental code for passing the trajectory (path) from a ROS Subscribor node the AirSim movements. 
 
 modules.py - A simple set of AirSim flight methods - incorporates with out without ROS connection (check line 15)
 
