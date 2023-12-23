@@ -16,6 +16,8 @@ QGroundControl (QGC) is an intuitive and powerful ground control station (GCS) f
 
 ### 2d LiDAR
 The 2D LiDAR system is an advanced sensor that uses laser light to measure distances and create a two-dimensional representation of the surrounding environment. It is widely used in robotics, autonomous vehicles, environmental monitoring, and other applications requiring accurate distance measurements and environmental mapping.
+![Screenshot 2023-12-23 175919](https://github.com/slashback00/CS682_Autonomous_Drone/assets/69451310/9a9b9b50-be33-4b9f-98dc-ee6ce5e8effc)
+
 
 ### AirSim – Our UAV Simulator of Choice
 AirSim is an open source vehicle simulator built on Unreal Engine. The simulator provides realistic drone physics and comes with ready-made compatibility with our drone hardware. AirSim comes with a Pixhawk flight control wrapper, which is the brand of flight controller we use for our drone, thus providing functionality for all simulated flights in the hardware. AirSim also comes with a ROS wrapper.
