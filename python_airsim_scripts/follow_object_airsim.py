@@ -80,32 +80,36 @@ def main():
     if err != sl.ERROR_CODE.SUCCESS:
         exit(1)
         
-    obj_param = sl.ObjectDetectionParameters()
-    obj_param.enable_tracking=True
-    obj_param.image_sync=True
-
-
+    main_detection = sl.ObjectDetectionParameters()
+    main_detection.enable_tracking=True
+    main_detection.image_sync=True
+    main_detection.i
+    main_detection.detection_model = sl.OBJECT_DETECTION_MODEL.PERSON_HEAD 
+    #main_detection.detection_model = sl.OBJECT_DETECTION_MODEL.MULTI_CLASS_BOX  
     camera_infos = zed.get_camera_information()
-    if obj_param.enable_tracking :
+    if main_detection.enable_tracking :
         positional_tracking_param = sl.PositionalTrackingParameters()
         #positional_tracking_param.set_as_static = True
         positional_tracking_param.set_floor_as_origin = True
         zed.enable_positional_tracking(positional_tracking_param)
-
+ 
     print("Object Detection: Loading Module...")
 
-    err = zed.enable_object_detection(obj_param)
+    err = zed.enable_object_detection(main_detection)
     if err != sl.ERROR_CODE.SUCCESS :
         print (repr(err))
         zed.close()
         exit(1)
-    client = modules.get_client()  #Connect to AirSim Client
+    client = modules.get_client(False)  #Connect to AirSim Client, make TRUE if ROS Environment
     modules.take_Off(client)
-    modules.go_Up(client, 2) #Cline 2 meters
+    modules.go_Up(client, 2) #Rise 2 meters
     objects = sl.Objects()
     obj_runtime_param = sl.ObjectDetectionRuntimeParameters()
     obj_runtime_param.detection_confidence_threshold = 40
     
+    waypoints = [] #Store DRONE YAW Degree rotations from 0-360 here! (adds rightward rotation with increasing values)
+    waypoint_tracker = waypoints.__sizeof__
+
     while zed.grab() == sl.ERROR_CODE.SUCCESS:
         err = zed.retrieve_objects(objects, obj_runtime_param)
         start = timeit.default_timer()
@@ -117,13 +121,6 @@ def main():
                 print(" Label '"+repr(first_object.label)+"' (conf. "+str(int(first_object.confidence))+"/100)")
                 position = first_object.position
                 dimensions = first_object.dimensions
-                #print(" 3D position: [{0},{1},{2}]\n 3D dimentions: [{3},{4},{5}]".format(position[0],position[1],position[2],dimensions[0],dimensions[1],dimensions[2]))
-                print("3D position: " + str(round(position[2],2)) + "meters from drone")
-                print("Angling yaw at " + str(round(15* position[0],2)) + " degrees.") 
-            
-                client.rotateToYawAsync(8* position[0],5,3).join() #Turns drone to face object
-                client.moveByVelocityAsync(1,position[0],0,position[2] +position[2]*.2).join() #Moves drone to object via the distance received
-                #client.rotateToYawAsync(90,5,3).join() do a rotation after moving to object for next waypoint (can have a series of commands here to trigger certain rotattion directions based upon the preplanned path)
                 time.sleep(1)
                 client.rotateToYawAsync(0,5,3).join()
                 time.sleep(7)
@@ -145,7 +142,18 @@ def main():
                 distance = math.sqrt(point_cloud_value[0] * point_cloud_value[0] +
                                  point_cloud_value[1] * point_cloud_value[1] +
                                  point_cloud_value[2] * point_cloud_value[2])
+                #print(" 3D position: [{0},{1},{2}]\n 3D dimentions: [{3},{4},{5}]".format(position[0],position[1],position[2],dimensions[0],dimensions[1],dimensions[2]))
+                print("3D position: " + str(round(position[2],2)) + "meters from drone")
+                print("Angling yaw at " + str(round(15* position[0],2)) + " degrees.") 
 
+                client.rotateToYawAsync(8* position[0],5,3).join() #Turns drone to face object
+                client.moveByVelocityAsync(1,position[0],0,position[2] +position[2]*.2).join() #Moves drone to object via the distance received
+                #client.rotateToYawAsync(90,5,3).join() do a rotation after moving to object for next waypoint (can have a series of commands here to trigger certain rotattion directions based upon the preplanned path)
+                
+                #client.rotateToYawAsync([waypoint_tracker],5,3)
+                #waypoint_tracker+=1
+                ##Uncomment here for sequential waypoint rotations.
+                
                 point_cloud_np = point_cloud.get_data()
                 point_cloud_np.dot(tr_np)
                 if not np.isnan(distance) and not np.isinf(distance):
