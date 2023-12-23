@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Steps</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2 { color: #333; }
+        ul { list-style-type: none; }
+        li { margin-bottom: 10px; }
+        .note { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Installation Steps</h1>
+
+    <section>
+        <h2>QGroundControl Installation</h2>
+        <ol>
+            <li>Download QGroundControl: Visit the <a href="URL_TO_QGroundControl_Download">QGroundControl Download Page</a> and select the version for your OS.</li>
+            <li>Install the Application:
+                <ul>
+                    <li><strong>Windows:</strong> Run the .exe installer and follow the prompts.</li>
+                    <li><strong>macOS:</strong> Open the .dmg file and move QGroundControl to your Applications folder.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Post-Installation</h2>
+        <ul>
+            <li>Connect to Your UAV: Use USB, Telemetry Radio, or Wi-Fi to connect your UAV to QGroundControl.</li>
+            <li>Firmware Setup: Update your UAV's firmware via QGroundControl if necessary.</li>
+            <li>Calibrate Sensors: Follow QGroundControl's instructions for sensor calibration.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>ROS (Robot Operating System) with RPLidar: Installation and Setup Guide</h2>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Operating System: Ubuntu 20.04 (Focal) or Windows 10/11.</li>
+            <li>Ubuntu Setup:
+                <ul>
+                    <li>Configure Ubuntu repositories.</li>
+                    <li>Set up the necessary environment.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Installation Steps for ROS on Ubuntu</h3>
+        <ol>
+            <li>Follow the comprehensive installation guide for ROS Noetic at <a href="URL_TO_ROS_Noetic_Installation">ROS Noetic Installation on Ubuntu</a>.</li>
+        </ol>
+
+        <h3>Building the RPLidar ROS Package</h3>
+        <ol>
+            <li>Create a Catkin Workspace: Set up a new workspace for Catkin.</li>
+            <li>Clone the RPLidar Project:
+                <ul>
+                    <li>Navigate to the src folder of your Catkin workspace.</li>
+                    <li>Clone the RPLidar ROS package from GitHub: <a href="URL_TO_RPLIDAR_GITHUB">RPLidar ROS GitHub Repository</a>.</li>
+                </ul>
+            </li>
+            <li>Build the Package:
+                <ul>
+                    <li>Run <code>catkin_make</code> to build the rplidarNode and rplidarNodeClient.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Running the RPLidar ROS Package</h3>
+        <ul>
+            <li>Option 1: Using RViz:
+                <ul>
+                    <li>Execute <code>roslaunch rplidar_ros view_rplidar.launch</code>.</li>
+                    <li>View RPLidar's scan results in RViz.</li>
+                </ul>
+            </li>
+            <li>Option 2: Using Test Application:
+                <ul>
+                    <li>Start the node with <code>roslaunch rplidar_ros rplidar.launch</code>.</li>
+                    <li>Run <code>rosrun rplidar_ros rplidarNodeClient</code>.</li>
+                    <li>Check the RPLidar's scan results in the console.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>RPLidar SDK Installation on Windows</h3>
+        <ol>
+            <li>Download the SDK:
+                <ul>
+                    <li>Get the RPLidar A1M8 SDK from Slamtec, which includes user manuals, the RPLidar kit, datasheets, and more.</li>
+                </ul>
+            </li>
+            <li>Install the Driver:
+                <ul>
+                    <li>Use CP210xVCPInstaller_x64 from the SDK package, located in rplidar_sdk\rplidar_sdk-master\tools\cp2102_driver\CP210x_Windows_Drivers.</li>
+                </ul>
+            </li>
+            <li>Connect and Verify:
+                <ul>
+                    <li>Connect the RPLidar to your system via USB.</li>
+                    <li>Ensure the correct COM port is visible in the Device Manager.</li>
+                    <li>A UI application representing the Lidar should appear once the setup is successful.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <p class="note">Note: Replace all placeholder URLs with actual links to resources.</p>
+</body>
+</html>
