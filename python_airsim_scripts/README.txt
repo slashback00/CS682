@@ -1,3 +1,6 @@
+
+##IN CASE YOU SKIPPED THE DOCUMENTATION
+
 REQUIREMENTS - 
 1) A conda environment based upon the libraries listed in environment.yml
 2) AirSim installed (from Colosseum), running on UE.
