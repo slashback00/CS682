@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python AirSim and ROS Code Documentation</title>
+</head>
+<body>
+    <h1>Python AirSim and ROS Code Documentation</h1>
+
+    <h2>Global Variables</h2>
+    <p><code>velocity</code>: Global variable to store the drone's velocity.</p>
+
+    <h2>Functions</h2>
+
+    <h3><code>trajectory_callback(spline_marker_array_msg)</code></h3>
+    <p>Callback function that follows the last published trajectory in the spline marker array.</p>
+    <p><strong>Parameters:</strong></p>
+    <ul>
+        <li><code>spline_marker_array_msg</code>: A 3d path matrix passed via a ROS message containing a marker array representing the trajectory path.</li>
+    </ul>
+
+    <h3><code>airsim_follow()</code></h3>
+    <p>Main function to initialize ROS and set up subscribers.</p>
+    <p><strong>Subscribers:</strong></p>
+    <ul>
+        <li><code>/trajectory/spline_marker_array</code>: Subscribes to a ROS topic containing a marker array representing the trajectory path.</li>
+    </ul>
+
+    <h2>Main Execution</h2>
+    <p>The code starts the <code>airsim_follow()</code> function as the main entry point for execution.</p>
+</body>
+</html>
