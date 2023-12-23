@@ -9,9 +9,12 @@
     </style>
 </head>
 <body>
+    <h1>NOTE THIS IS IN DEVELOPMENT</h1>
+    <p>TODO: extract the marker trajectory from the 3D array via RTABMAP - then pass that variable to the ROS Subscriber via a ROS message.</p>
     <div class="function">
     <h2>Function: airsim_follow</h2>
-    <p>Initializes a ROS node and starts the AirSim drone to follow a predefined trajectory based on the received spline marker array.</p>
+    <p>Initializes a ROS node and starts the AirSim drone to follow a premade based on the received spline marker array.</p>
+    <p>Use the RTABMAP Zed2 stereoscopic camera to generate the PATH, see the User Manual Documentation for more information on this process.</p>
 
     <h3>Procedure:</h3>
     <ol>
@@ -21,14 +24,10 @@
         <li>Keeps the node running with <code>rospy.spin()</code>.</li>
     </ol>
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">velocity:</span> A global variable set to define the drone's movement speed. It's set by default to 0.5 but can be adjusted via the <code>/velocity</code> ROS parameter.</li>
-    </ul>
 
     <h3>Subscriptions:</h3>
     <ul>
-        <li><span class="parameter">/trajectory/spline_marker_array (MarkerArray):</span> The drone subscribes to this topic to receive the trajectory path defined as a marker array. It's essential for the drone's path following behavior.</li>
+        <li><span class="parameter">/trajectory/spline_marker_array (MarkerArray):</span> A ROS subscription to the 3d path array, which holds the path information.</li>
     </ul>
 
     <h3>Usage:</h3>
@@ -36,7 +35,7 @@
 </div>
 <div class="function">
     <h2>Initial Connection to AirSim</h2>
-    <p>Establishes a connection with the AirSim simulator and enables API control for sending commands to the multirotor client.</p>
+    <p>Establishes a connection with the AirSim simulator and enables API control for sending commands to the drone.</p>
     
     <h3>Code Overview:</h3>
     <ul>
@@ -50,7 +49,7 @@
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">spline_marker_array_msg:</span> The received marker array message containing the trajectory points.</li>
+        <li><span class="parameter">spline_marker_array_msg:</span> The received marker array ROS message containing the trajectory points.</li>
     </ul>
 
     <h3>Procedure:</h3>
