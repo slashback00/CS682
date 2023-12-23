@@ -4,7 +4,7 @@ REQUIREMENTS -
 3) ZED SDK installed
 
 
-follow_person_airsim.py - Connects the zed camera on a laptop, and then to an AIrSim client. The zed will than employ the human detector network,
+follow_object_airsim.py - Connects the zed camera on a laptop, and then to an AIrSim client. The zed will than employ the human detector network,
 capture the first person, read the distance, and then target the drone to move toward that distance in meters (AirSim default distane scale).
 Along the xyz axis we fixed the y axis(tilt up or down) in the demo to keep the drone from iterating to the ground. 
 You can uncomment line 126 and add the more instruction based logic you wish the drone to follow after reaching the waypoint.
