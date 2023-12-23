@@ -1,0 +1,118 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\fi720\li720\sa160\sl259\slmult0\b\f0\fs40\lang9 PROJECT Autonomous Drone Navigation\par
+
+\pard\fi720\li2880\sa160\sl259\slmult0\b0\fs28 END USER MANUAL\par
+
+\pard\sa160\sl259\slmult0\b Project Description:-\par
+\b0\fs22 This project focuses on developing an advanced Autonomous Drone Navigation System. Students will engage in creating a sophisticated flight computer, capable of interpreting depth images from lidar and Zed stereoscopic camera. This system will empower the drone to learn about its surrounding environment and formulate a flight path independent of GPS data.\par
+\b\fs28 Project Hardware requirements:-\par
+\b0\fs22 Drone, Zed 2 camera , 2D lidar , Jetson nano , Pixhawk\par
+\b\fs28 Project Software requirements:\par
+\b0\fs22 Visual Studio Code, Zed SDK, ROS(Robot Operating System), Unreal engine, Q Ground Control\par
+\b\fs28 Installations:\par
+\fs24 ZED SDK Installation \par
+\fs22 Prerequisites:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0 A compatible ZED stereo camera.\par
+{\pntext\f1\'B7\tab}Ensure your system meets the minimum hardware requirements specified by Stereolabs.\par
+
+\pard\sa160\sl259\slmult0\b Installation Steps\b0\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0 Download the SDK: Go to the ZED SDK download page and download the latest version compatible with your Windows system.\par
+{\pntext\f1\'B7\tab}Run the Installer: Execute the downloaded .exe file and follow the on-screen instructions. This will install the necessary drivers and the SDK.\par
+{\pntext\f1\'B7\tab}Restart Your Computer: After installation, reboot your computer to ensure all drivers are properly loaded.\par
+
+\pard\sa160\sl259\slmult0\par
+\b\fs24 Unreal Engine Setup \par
+\fs22 Prerequisites:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li765\sa160\sl259\slmult0\b0 A PC with Windows 10/11, macOS, or Linux.\par
+{\pntext\f1\'B7\tab}Adequate hardware specs to run the engine smoothly (refer to Unreal Engine\rquote s system requirements).\par
+{\pntext\f1\'B7\tab}A free Epic Games account to download Unreal Engine.\b\par
+
+\pard\sa160\sl259\slmult0 Installation Steps\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0 Download Epic Games Launcher: Visit the Epic Games Download Page and download the Epic Games Launcher.\par
+{\pntext\f1\'B7\tab}Install the Launcher: Run the downloaded installer and follow the on-screen instructions. \par
+{\pntext\f1\'B7\tab}Launch Epic Games Launcher: Sign in with your Epic Games account.\par
+{\pntext\f1\'B7\tab}Install Unreal Engine: Navigate to the \lquote Unreal Engine\rquote  tab, click on the \lquote Library\rquote  section, and then click the \lquote +\rquote  button to add a new engine version.\par
+{\pntext\f1\'B7\tab}Choose Version: Select the desired version of Unreal Engine and click \lquote Install\rquote .\par
+
+\pard\sa160\sl259\slmult0\par
+\par
+\b\fs24 QGroundControl Installation \par
+\fs22 Prerequisites :\b0\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0 A compatible computer\par
+{\pntext\f1\'B7\tab}A UAV that communicates using the MAVLink protocol.\par
+{\pntext\f1\'B7\tab}A stable internet connection for downloading the software.\par
+
+\pard\sa160\sl259\slmult0\b Installation Steps\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0 Download QGroundControl: Visit the QGroundControl download page and select the appropriate version for your operating system.\par
+{\pntext\f1\'B7\tab}Install the Application:\par
+
+\pard\li720\sa160\sl259\slmult0 -Windows: Run the downloaded .exe installer and follow the installation prompts.\par
+-macOS: Open the .dmg file and drag the QGroundControl app to your Applications folder\par
+
+\pard\sa160\sl259\slmult0\b Post-Installation\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0 Connect to Your UAV: Connect your UAV to QGroundControl using USB, Telemetry Radio, or Wi-Fi, depending on your drone's setup.\par
+{\pntext\f1\'B7\tab}Firmware Setup: If needed, update your UAV's firmware through QGroundControl.\par
+{\pntext\f1\'B7\tab}Calibrate Sensors: Follow the on-screen instructions in QGroundControl to calibrate your UAV's sensors.\par
+
+\pard\sa160\sl259\slmult0\b\fs24\par
+ROS(Robot Operating System)\par
+\fs22 Prerequisites:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0\fs24 Primarily a machine with Ubuntu 20.04 (Focal) release or Windows 10/11\b\par
+{\pntext\f1\'B7\tab}\b0 Configure Ubuntu repositories. Setup environment (for both).\b\par
+
+\pard\sa160\sl259\slmult0\par
+Installation Steps:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0\b0\fs22 Go through these steps for complete installation of ROS- {{\field{\*\fldinst{HYPERLINK https://wiki.ros.org/noetic/Installation/Ubuntu }}{\fldrslt{https://wiki.ros.org/noetic/Installation/Ubuntu\ul0\cf0}}}}\b\f0\fs24\par
+{\pntext\f1\'B7\tab}\b0\fs22 Build Rplidar ros package- \b\fs24\par
+
+\pard\sa160\sl259\slmult0\b0\fs22                1) Create a catkin's workspcae.\b\fs24\par
+\b0\fs22                2) Clone this project to your catkin's workspace src folder\par
+                   ({{\field{\*\fldinst{HYPERLINK https://github.com/robopeak/rplidar_ros }}{\fldrslt{https://github.com/robopeak/rplidar_ros\ul0\cf0}}}}\f0\fs22 )\par
+               3) Running catkin_make to build rplidarNode and rplidarNodeClient\par
+\b Run rplidar ros package\b0\par
+There're two ways to run rplidar ros package\par
+I. Run rplidar node and view in the rviz\par
+roslaunch rplidar_ros view_rplidar.launch\par
+You should see rplidar's scan result in the rviz.\par
+II. Run rplidar node and view using test application\par
+roslaunch rplidar_ros rplidar.launch \par
+rosrun rplidar_ros rplidarNodeClient\par
+You should see rplidar's scan result in the console\par
+\par
+\b\fs24 RPLidar SDK Installation (Windows)\b0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0 Download RPLidar A1M8 SDK package (The lidar we are using for this project through through {{\field{\*\fldinst{HYPERLINK https://www.slamtec.ai/ }}{\fldrslt{https://www.slamtec.ai/\ul0\cf0}}}}\f0\fs22 . Slamtec provides usermanual, rplidarkit, datasheet and many more on various lidars.\par
+{\pntext\f1\'B7\tab}Install a driver- CP210xVCPInstaller_x64 from SDK package\par
+
+\pard\sa160\sl259\slmult0                (rplidar_sdk\\rplidar_sdk-master\\tools\\cp2102_driver\\CP210x_Windows_Drivers)\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa160\sl259\slmult0 Connect rplidar to the system using USB cable, then you should see the port in the device manager. (Make sure you select right COM port)\par
+{\pntext\f1\'B7\tab}Then you should see an application of UI representing the lidar.\par
+
+\pard\sa160\sl259\slmult0 The app directory contains the related sample code. And SLAMTEC provides\par
+the following demo applications in the app directory:\par
+3 other ways to use\par
+1. ultra_simple: An ultra-simple command line application demonstrates the simplest way to\par
+connect to an RPLIDAR device and continuously fetching the scan data and\par
+outputting the data to the console.\par
+2. simple_grabber:\par
+A command line grab application. Each execution will grab two round of laser\par
+data and show as histogram. \par
+3. frame_grabber\par
+A win32 GUI grab application. When pressing start scan button, it will start\par
+scan continuously and show the data in the UI.\par
+
+\pard\sa160\sl259\slmult0\par
+}
+ 
