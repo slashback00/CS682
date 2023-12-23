@@ -45,3 +45,9 @@ In python_airsim_scripts, you will fine the code to deploy an AirSim drone to li
     ```bash
     python follow_object_airsim.py
     ```
+To have the drone simulate a path traversal with multiple waypoints - modify the waypoints array to contain the desired yaw rotations. 
+For example, if you wish the drone to traverse a simple U shaped path with 3 waypoints..
+
+```bash
+waypoints = [90, 90, 0] #two initial rightward rotations
+```
