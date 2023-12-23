@@ -2,7 +2,7 @@
 # TEAM 2 – Autonomous Drone
 **Project Statement**: Develop the Autonomous Navigation Features of a Pixhawk Powered Drone. Utilize The Jetson Nano, ZED 2 Stereoscopic Camera, and 2d LiDAR to sufficiently travel a path in a supervised, heuristic environment. This repo provides waypoint-seeking drone heuristics tested on AirSim, and ready to deploy on a Pixhawk drone!
 
-### Full Documentation here! [Documentation](https://slashback00.github.io/CS682_Autonomous_Drone/index.html)
+### Full Documentation [here!](https://slashback00.github.io/CS682_Autonomous_Drone/index.html)
 ## Hardware and Features
 
 ### Zed Camera
