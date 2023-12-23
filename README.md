@@ -25,7 +25,8 @@ The 2D LiDAR system is an advanced sensor that uses laser light to measure dista
 AirSim is an open source vehicle simulator built on Unreal Engine. The simulator provides realistic drone physics and comes with ready-made compatibility with our drone hardware. AirSim comes with a Pixhawk flight control wrapper, which is the brand of flight controller we use for our drone, thus providing functionality for all simulated flights in the hardware. AirSim also comes with a ROS wrapper.
 
 Follow these instructions to download AirSim here[installation_guide.html](https://slashback00.github.io/CS682_Autonomous_Drone/installation_guide.html)
-
+## The Code
+In python_airsim_scripts, you will fine the code to deploy an AirSim drone to lift off, seek a waypoint, and travel to that waypoint. You may choose to wrap the code in a deployed ROS environment for a realistic flight controller stack. 
 ## Demo the waypoint travel
 
 1. **Before Running the code, activate a conda environment with environment.yml**
