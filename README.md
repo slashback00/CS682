@@ -10,6 +10,8 @@ The ZED 2 Camera is a stereo depth camera that provides advanced depth sensing a
 
 ### QGroundcontrol
 QGroundControl (QGC) is an intuitive and powerful ground control station (GCS) for UAVs. The primary goal of QGC is ease of use for both first time and professional users. It provides full flight control and mission planning for any MAVLink enabled drone, and vehicle setup for both PX4 and ArduPilot powered UAVs.
+<img width="1680" alt="Screenshot_2023-10-25_at_16 22 09" src="https://github.com/slashback00/CS682_Autonomous_Drone/assets/69451310/e214fdb3-8b76-4063-8405-e3cb3547a823">
+
 
 ### 2d LiDAR
 The 2D LiDAR system is an advanced sensor that uses laser light to measure distances and create a two-dimensional representation of the surrounding environment. It is widely used in robotics, autonomous vehicles, environmental monitoring, and other applications requiring accurate distance measurements and environmental mapping.
