@@ -4,7 +4,8 @@
 
 ### Full Documentation [here!](https://slashback00.github.io/CS682_Autonomous_Drone/index.html)
 ## Hardware and Features
-
+###Jetson Nano
+The NVIDIA powered Jetson Nano is the central drone computer. The micro computer comes with CUDA compatible parallel computing for efficient AI application deployment for our drone.
 ### Zed Camera
 The ZED 2 Camera is a stereo depth camera that provides advanced depth sensing and environmental understanding capabilities. It is designed for a wide range of applications, including robotics, augmented reality, and spatial mapping. The ZED SDK provides APIs for depth sensing, spatial mapping, object detection, and more. This project uses the ZED 2 functionalities to detect waypoints, read distance and position, and pass those variables to the drone.
 ![image](https://github.com/slashback00/CS682_Autonomous_Drone/assets/69451310/0d4920f2-630b-4772-a035-44f4b59a34fb)
