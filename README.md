@@ -16,6 +16,7 @@ QGroundControl (QGC) is an intuitive and powerful ground control station (GCS) f
 
 ### 2d LiDAR
 The 2D LiDAR system is an advanced sensor that uses laser light to measure distances and create a two-dimensional representation of the surrounding environment. It is widely used in robotics, autonomous vehicles, environmental monitoring, and other applications requiring accurate distance measurements and environmental mapping.
+
 ![Screenshot 2023-12-23 175919](https://github.com/slashback00/CS682_Autonomous_Drone/assets/69451310/d147c7f7-58e0-4dc4-ae2c-2c942b229a87)
 
 
