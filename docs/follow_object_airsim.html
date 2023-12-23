@@ -19,7 +19,7 @@
 
     <!-- Overview Section -->
     <h2>Overview</h2>
-    <p>This is the main proof of concept script for our autonomous flight. The program initializes a drone takeoff, then triggers an object detection loop via the Zed SDK. </p>
+    <p>This is the main proof of concept script for our autonomous flight. The program initializes a drone takeoff, then triggers an object detection loop via the Zed SDK, which triggers the AirSim flight directions. </p>
     <p>Once an object is detected, its distance from the camera, as well as its required yaw angle from center are both calculated. Then the drone passes those parameters to the drone movement methods in modules.py to commence movement. </p>
     <p>Depending on the path planned for the drone, you will need to provide movement context per each waypoint for the drone to navigate. There is a sample for such a feature commented out in line 130.</p>
 
